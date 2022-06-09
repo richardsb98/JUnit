@@ -2,25 +2,24 @@ public class Grader {
 
     public char determineLetterGrade (int numberGrade) {
         if (numberGrade < 0 | numberGrade > 100) {
-            String InvalidScore = "Invalid Score";
-            System.out.println(InvalidScore);
+           throw new IllegalArgumentException("Number grade cannot be less than 0 or more than 100");
         }
         else if (numberGrade < 40){
             return 'U';
         }
-        else if (numberGrade < 50){
+        else if (numberGrade < 50 & numberGrade >= 40){
             return 'F';
         }
-        else if (numberGrade < 60){
+        else if (numberGrade < 60 & numberGrade >= 50){
             return 'D';
         }
-        else if (numberGrade < 70){
+        else if (numberGrade < 70 & numberGrade >= 60){
             return 'C';
         }
-        else if (numberGrade < 80){
+        else if (numberGrade < 80 & numberGrade >= 70){
             return 'B';
         }
-        else if (numberGrade < 90){
+        else {
             return 'A';
         }
 
