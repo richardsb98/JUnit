@@ -70,10 +70,15 @@ class GraderTest {
     void SeventyShouldReturnU(){
         Assertions.assertEquals('U', grader.determineLetterGrade(39), "Boundary not correct");
     }
+
+    @Test
+    void InvalidGrade(){
+        Assertions.assertThrows(IllegalArgumentException.class,
+                () -> {
+                    grader.determineLetterGrade(-1);
+                });
+
+
+    }
+
 }
-//    @Test
-//    void InvalidGrade(){
-//        Assertions.assertEquals("Number grade cannot be less than 0 or more than 100", , );
-//    }
-//
-//}
