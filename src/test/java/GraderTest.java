@@ -19,7 +19,7 @@ class GraderTest {
 
     @Test
     void FiftyNineReturnsD() {
-        Assertions.assertEquals('D', grader.determineLetterGrade(59), "Grade not equal to D");
+        Assertions.assertEquals('D', grader.determineLetterGrade(55), "Grade not equal to D");
     }
 
     @Test
@@ -37,9 +37,38 @@ class GraderTest {
         Assertions.assertEquals('A', grader.determineLetterGrade(85), "Grade not equal to A");
     }
 
+
+
+    ////////////////////////////// Boundary Tests //////////////////////////////////////////////////////////////////////////
+
     @Test
-    void EightyOneShouldReturnA() {
+    void EightyShouldReturnA() {
         Assertions.assertEquals('A', grader.determineLetterGrade(80));
+    }
+
+    @Test
+    void SeventyShouldReturnB(){
+        Assertions.assertEquals('B', grader.determineLetterGrade(70), "Boundary not correct");
+    }
+
+    @Test
+    void SixtyShouldReturnC(){
+        Assertions.assertEquals('C', grader.determineLetterGrade(60), "Boundary not correct");
+    }
+
+    @Test
+    void FiftyShouldReturnD(){
+        Assertions.assertEquals('D', grader.determineLetterGrade(50), "Boundary not correct");
+    }
+
+    @Test
+    void FourtyShouldReturnF(){
+        Assertions.assertEquals('F', grader.determineLetterGrade(40), "Boundary not correct");
+    }
+
+    @Test
+    void SeventyShouldReturnU(){
+        Assertions.assertEquals('U', grader.determineLetterGrade(39), "Boundary not correct");
     }
 }
 //    @Test
