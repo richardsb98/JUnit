@@ -11,6 +11,7 @@ class SimpleCalculatorTest  {
         SimpleCalculator calculator = new SimpleCalculator();
         Assertions.assertEquals(1,calculator.minus(5,4), "error with computation");
 
+
     }
 
 }
